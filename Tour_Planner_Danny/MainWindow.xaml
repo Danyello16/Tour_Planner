@@ -5,8 +5,102 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tour_Planner_Danny"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        AllowsTransparency="True"
+        Title="Tour Planner"  ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Margin="0 0 0 0" Height="550" Width="900" Icon="flight.png"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" Background="{x:Null}" >
+
     <Grid>
-        
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="170"/>
+            <ColumnDefinition Width="535*"/>
+            <ColumnDefinition Width="77*"/>
+            <ColumnDefinition Width="118*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Name="backgroundall" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="4">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="DarkGray" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="0" Background="DarkGray"></Grid>
+        <Grid  x:Name="Bar" Grid.ColumnSpan="4" Grid.RowSpan="2" MouseDown="MouseDownPanel" Visibility="Visible" Margin="0 0 0 0">
+            <Border CornerRadius="7"  BorderThickness="0"  >
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#0188A3" Offset="0"/>
+                        <GradientStop Color="#5260ff" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+
+
+            </Border>
+        </Grid>
+
+
+        <Grid Grid.ColumnSpan="1" Grid.Row="2">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="4"/>
+                    <GradientStop Color="DarkGray" Offset="3"/>
+                    <GradientStop Color="White" Offset="4"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+        </Grid>
+        <Grid Grid.Row="0" Grid.RowSpan="2" Grid.ColumnSpan="1" >
+
+            <!--<Button  Width="Auto" Height="Auto"   Foreground="DarkGray">
+                    <Button.Background>
+                    <ImageBrush ImageSource="UIAssets/bmobile-logo.png"/>
+                    </Button.Background>
+                </Button>-->
+
+        </Grid>
+        <Grid  Grid.Column="2" Grid.RowSpan="2" Margin="0 12">
+
+            <materialDesign:Badged
+             Badge="{materialDesign:PackIcon Kind=User}" 
+             BadgeColorZoneMode="SecondaryMid">
+                <Button  
+             Content="Login"
+             IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+            </materialDesign:Badged>
+
+            <!--<Button 
+                 Style="{StaticResource MaterialDesignFlatDarkBgButton}"
+                
+             Height="35" Opacity="0.25"  Margin="0 10"   />
+            <WrapPanel  Margin="0 5">
+                <Image  Width="14" Height="13" Source="UIAssets/sharp_highlight_off_white_36dp.png" Margin="10 0 0 0" RenderTransformOrigin="0.964,0.538" ></Image>
+                <Label HorizontalAlignment="Center" VerticalAlignment="Center" Content="Sign in" Margin="0,10,0,10" Foreground="White" FontFamily="Roboto Black" FontSize="12" />
+            </WrapPanel>-->
+
+        </Grid>
+
+        <Grid  Grid.ColumnSpan="4" Grid.RowSpan="1" MouseDown="MouseDownPanel" Visibility="Visible" Margin="0 0 0 0">
+            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right" Margin="10 2 4 2">
+                <Button x:Name="ButtonMiniMize" Width="22" Height="22"  BorderBrush="{x:Null}" Foreground="DarkGray" >
+                  
+                </Button>
+                <Button  Name="ButtonTurnServiceOff" Width="22" Height="22"  BorderBrush="{x:Null}" Foreground="DarkGray" >
+
+                  
+                </Button>
+                <Button x:Name="ButtonClose" Width="22" Height="22" BorderBrush="{x:Null}" Foreground="DarkGray" Click="CloseButton" >
+                   
+                </Button>
+            </StackPanel>
+        </Grid>
+
     </Grid>
 </Window>

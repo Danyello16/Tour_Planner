@@ -24,5 +24,15 @@ namespace Tour_Planner_Danny
         {
             InitializeComponent();
         }
+
+        private void MouseDownPanel(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
+
+        private void CloseButton(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

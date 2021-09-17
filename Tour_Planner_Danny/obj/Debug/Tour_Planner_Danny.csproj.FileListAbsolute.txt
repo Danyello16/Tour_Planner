@@ -13,3 +13,10 @@ C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\ob
 C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\obj\Debug\Tour_Planner_Danny.csproj.CoreCompileInputs.cache
 C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\obj\Debug\Tour_Planner_Danny.exe
 C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\obj\Debug\Tour_Planner_Danny.pdb
+C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\bin\Debug\MaterialDesignColors.dll
+C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\bin\Debug\MaterialDesignColors.pdb
+C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\obj\Debug\App.baml
+C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\obj\Debug\Tour_Planner_Danny.csproj.CopyComplete
