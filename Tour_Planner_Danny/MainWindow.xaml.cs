@@ -23,6 +23,7 @@ namespace Tour_Planner_Danny
         public MainWindow()
         {
             InitializeComponent();
+            Tourlistview.Items.Add("hi");
         }
 
         private void MouseDownPanel(object sender, MouseButtonEventArgs e)
