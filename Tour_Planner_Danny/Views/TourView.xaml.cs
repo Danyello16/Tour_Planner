@@ -10,17 +10,14 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Tour_Planner_Danny
+namespace Tour_Planner_Danny.Views
 {
-    /// <summary>
-    /// MainWindow.xaml etkileşim mantığı
-    /// </summary>
-    public partial class MainWindow : Window
+
+    public partial class TourView : Window
     {
-        public MainWindow()
+        public TourView()
         {
             InitializeComponent();
             Tourlistview.Items.Add("hi");

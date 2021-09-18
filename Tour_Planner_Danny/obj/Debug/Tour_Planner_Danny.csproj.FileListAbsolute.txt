@@ -2,11 +2,9 @@ C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\bi
 C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\bin\Debug\Tour_Planner_Danny.exe
 C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\bin\Debug\Tour_Planner_Danny.pdb
 C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\obj\Debug\Tour_Planner_Danny.csproj.AssemblyReference.cache
-C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\obj\Debug\MainWindow.g.cs
 C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\obj\Debug\App.g.cs
 C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\obj\Debug\Tour_Planner_Danny_MarkupCompile.cache
 C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\obj\Debug\Tour_Planner_Danny_MarkupCompile.lref
-C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\obj\Debug\MainWindow.baml
 C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\obj\Debug\Tour_Planner_Danny.g.resources
 C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\obj\Debug\Tour_Planner_Danny.Properties.Resources.resources
 C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\obj\Debug\Tour_Planner_Danny.csproj.GenerateResource.cache
@@ -20,3 +18,5 @@ C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\bi
 C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\bin\Debug\MaterialDesignThemes.Wpf.xml
 C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\obj\Debug\App.baml
 C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\obj\Debug\Tour_Planner_Danny.csproj.CopyComplete
+C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\obj\Debug\Views\TourView.g.cs
+C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\obj\Debug\Views\TourView.baml

@@ -1,14 +1,13 @@
-﻿<Window x:Class="Tour_Planner_Danny.MainWindow"
+﻿<Window x:Class="Tour_Planner_Danny.Views.TourView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Tour_Planner_Danny"
-        mc:Ignorable="d"
-        AllowsTransparency="True"
-        Title="Tour Planner"  ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Margin="0 0 0 0" Height="550" Width="900" Icon="flight.png"
-         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" Background="{x:Null}" >
-
+        xmlns:local="clr-namespace:Tour_Planner_Danny.Views"
+              mc:Ignorable="d"
+           AllowsTransparency="True"
+        Title="Tour Planner"  ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Margin="0 0 0 0" Height="550" Width="900" Icon="/UIImages/flight.png"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" Background="{x:Null}">
     <Grid>
 
         <Grid.RowDefinitions>
@@ -22,8 +21,8 @@
             <ColumnDefinition Width="207*"/>
         </Grid.ColumnDefinitions>
 
-    
-        
+
+
         <Grid Name="backgroundall" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="299*"/>
@@ -35,7 +34,7 @@
                     <GradientStop Color="DarkGray" Offset="1"/>
                 </LinearGradientBrush>
             </Grid.Background>
-            <Image Margin="195,85,10,10" Source="backgorundtour.png" Stretch="Fill" Grid.ColumnSpan="2"/>
+            <Image Margin="195,85,10,10"  Source="/UIImages/backgorundtour.png" Stretch="Fill" Grid.ColumnSpan="2"/>
 
 
         </Grid>
@@ -132,7 +131,7 @@
                                 </TextBox>
 
                             </WrapPanel>
-                            <Image Margin="0 10 1 1"  Source="backgorundtour.png" Width="200" Height="180"/>
+                            <Image Margin="0 10 1 1" Source="/UIImages/backgorundtour.png"  Width="200" Height="180" OpacityMask="Black"/>
                         </WrapPanel>
                     </WrapPanel>
 
