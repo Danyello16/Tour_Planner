@@ -20,8 +20,8 @@ namespace Tour_Planner_Danny.Views
         public TourView()
         {
             InitializeComponent();
-            Tourlistview.Items.Add("hi");
-            lvLog.Items.Add("hi");
+            
+           
         }
 
         private void MouseDownPanel(object sender, MouseButtonEventArgs e)

@@ -10,8 +10,8 @@ namespace Tour_Planner_Danny.Models
     public class Log
     {
         public int LogID { get; set; }
-        public int TourID { get; set; }  
-        
+        public int TourID { get; set; }
+
         public int Rating { get; set; }
         public string TotalTime { get; set; }
         public string Date { get; set; }
