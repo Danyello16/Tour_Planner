@@ -14,19 +14,14 @@ using System.Windows.Shapes;
 
 namespace Tour_Planner_Danny.Views
 {
-
-    public partial class TourView : Window
+    /// <summary>
+    /// TourLogEditView.xaml etkileşim mantığı
+    /// </summary>
+    public partial class TourLogEditView : Window
     {
-        public TourView()
+        public TourLogEditView()
         {
             InitializeComponent();
-            Tourlistview.Items.Add("hi");
-            lvLog.Items.Add("hi");
-        }
-
-        private void MouseDownPanel(object sender, MouseButtonEventArgs e)
-        {
-            DragMove();
         }
 
         private void CloseButton(object sender, RoutedEventArgs e)
@@ -46,9 +41,9 @@ namespace Tour_Planner_Danny.Views
             this.WindowState = WindowState.Minimized;
         }
 
-        private void AddLog(object sender, RoutedEventArgs e)
+        private void Bar_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            new TourLogEditView().ShowDialog();
+            DragMove();
         }
     }
 }

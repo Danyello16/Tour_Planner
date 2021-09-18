@@ -20,3 +20,5 @@ C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\ob
 C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\obj\Debug\Tour_Planner_Danny.csproj.CopyComplete
 C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\obj\Debug\Views\TourView.g.cs
 C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\obj\Debug\Views\TourView.baml
+C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\obj\Debug\Views\TourLogEditView.g.cs
+C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\obj\Debug\Views\TourLogEditView.baml
