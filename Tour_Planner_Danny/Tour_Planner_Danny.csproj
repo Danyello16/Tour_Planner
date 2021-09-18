@@ -104,6 +104,7 @@
     <Compile Include="DataAcessLayer\DatabaseApi.cs" />
     <Compile Include="Models\Log.cs" />
     <Compile Include="Models\Tour.cs" />
+    <Compile Include="ViewModels\TourViewModel.cs" />
     <Compile Include="Views\TourLogEditView.xaml.cs">
       <DependentUpon>TourLogEditView.xaml</DependentUpon>
     </Compile>
@@ -159,7 +160,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BusinessLayer\" />
-    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="UIImages\editlogbg.png" />
