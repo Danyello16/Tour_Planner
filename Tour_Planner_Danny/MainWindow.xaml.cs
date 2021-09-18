@@ -24,6 +24,7 @@ namespace Tour_Planner_Danny
         {
             InitializeComponent();
             Tourlistview.Items.Add("hi");
+            lvLog.Items.Add("hi");
         }
 
         private void MouseDownPanel(object sender, MouseButtonEventArgs e)
@@ -33,7 +34,19 @@ namespace Tour_Planner_Danny
 
         private void CloseButton(object sender, RoutedEventArgs e)
         {
+            this.Close();
+        }
 
+        private void MaximizeBtn(object sender, RoutedEventArgs e)
+        {
+            if (this.WindowState == WindowState.Maximized)
+                this.WindowState = WindowState.Normal;
+            else this.WindowState = WindowState.Maximized;
+        }
+
+        private void MinimizeBTn(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
         }
     }
 }
