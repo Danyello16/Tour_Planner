@@ -46,3 +46,12 @@ C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\bi
 C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\bin\Debug\System.Threading.Channels.xml
 C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\bin\Debug\System.ValueTuple.xml
+C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\bin\Debug\itextsharp.dll
+C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\bin\Debug\itextsharp.xml
+C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\bin\Debug\Newtonsoft.Json.dll
+C:\Users\asus\source\repos\Tour_Planner_Danny\Tour_Planner\Tour_Planner_Danny\bin\Debug\Newtonsoft.Json.xml

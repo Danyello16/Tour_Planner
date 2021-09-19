@@ -4,11 +4,21 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tour_Planner_Danny.Views"
+        xmlns:vm="clr-namespace:Tour_Planner_Danny.ViewModels"
               mc:Ignorable="d"
            AllowsTransparency="True"
         Title="Tour Planner"  ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Margin="0 0 0 0" Height="550" Width="900" Icon="/UIImages/flight.png"
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" Background="{x:Null}">
-    <Grid>
+    <Window.Resources>
+        <vm:TourViewModel x:Key="TourViewModel"/>
+    </Window.Resources>
+
+
+    <Window.DataContext>
+        <vm:TourViewModel/>
+    </Window.DataContext>
+
+    <Grid DataContext="{Binding Source={StaticResource TourViewModel}}">
 
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
@@ -71,7 +81,7 @@
                                         </LinearGradientBrush>
                                     </materialDesign:PackIcon.Foreground>
                                 </materialDesign:PackIcon>
-                                <TextBox Width="120" Height="22" FontFamily="Comic Sans MS"  materialDesign:HintAssist.Hint="Title...">
+                                <TextBox Text="{Binding Tour.TourName, Mode=TwoWay}" Width="120" Height="22" FontFamily="Comic Sans MS"  materialDesign:HintAssist.Hint="Title...">
                                     <TextBox.Foreground>
                                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                             <GradientStop Color="#0188A3" Offset="0"/>
@@ -93,7 +103,7 @@
                                         </LinearGradientBrush>
                                     </materialDesign:PackIcon.Foreground>
                                 </materialDesign:PackIcon>
-                                <TextBox Width="120" Height="22" FontFamily="Comic Sans MS"  materialDesign:HintAssist.Hint="Distance...">
+                                <TextBox Text="{Binding Tour.Distance, Mode=TwoWay}" Width="120" Height="22" FontFamily="Comic Sans MS"  materialDesign:HintAssist.Hint="Distance...">
                                     <TextBox.Foreground>
                                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                             <GradientStop Color="#0188A3" Offset="0"/>
@@ -118,7 +128,7 @@
                                         </LinearGradientBrush>
                                     </materialDesign:PackIcon.Foreground>
                                 </materialDesign:PackIcon>
-                                <TextBox Width="120" Height="22" FontFamily="Comic Sans MS"  materialDesign:HintAssist.Hint="Route...">
+                                <TextBox Text="{Binding Tour.Route, Mode=TwoWay}" Width="120" Height="22" FontFamily="Comic Sans MS"  materialDesign:HintAssist.Hint="Route...">
                                     <TextBox.Foreground>
                                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                             <GradientStop Color="#0188A3" Offset="0"/>
@@ -153,7 +163,7 @@
                                     </LinearGradientBrush>
                                 </materialDesign:PackIcon.Foreground>
                             </materialDesign:PackIcon>
-                            <TextBox Width="350" Height="22" FontFamily="Comic Sans MS"  materialDesign:HintAssist.Hint="Description...">
+                            <TextBox  Text="{Binding Tour.TourDescription, Mode=TwoWay}" Width="350" Height="22" FontFamily="Comic Sans MS"  materialDesign:HintAssist.Hint="Description...">
                                 <TextBox.Foreground>
                                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                         <GradientStop Color="#0188A3" Offset="0"/>
@@ -176,7 +186,7 @@
                                 </materialDesign:PackIcon.Foreground>
                             </materialDesign:PackIcon>
 
-                            <ListView Name="lvLog"  MinWidth="450" Opacity="0.9"    FontFamily="Comic Sans MS"  FontSize="9" BorderBrush="White" Height="190" Width="465"   >
+                            <ListView SelectedItem="{Binding SelectedLog}" ItemsSource="{Binding Tour.Logs}"  Name="lvLog"  MinWidth="450" Opacity="0.9"    FontFamily="Comic Sans MS"  FontSize="9" BorderBrush="White" Height="190" Width="465"   >
                                 <ListView.Foreground>
                                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                         <GradientStop Color="#0188A3" Offset="0"/>
@@ -206,7 +216,7 @@
                                 </ListView.View>
                             </ListView>
                             <WrapPanel Orientation="Horizontal" Margin="0 3 0 0" >
-                                <Button  Style="{StaticResource MaterialDesignIconButton}" Width="22" Height="22" BorderBrush="{x:Null}" Foreground="DarkGray" Click="AddLog" >
+                                <Button Command="{Binding AddLogCommand}"  Style="{StaticResource MaterialDesignIconButton}" Width="22" Height="22" BorderBrush="{x:Null}" Foreground="DarkGray" Click="AddLog" >
                                     <materialDesign:PackIcon Height="22"  Width="22" Kind="AddBold" >
                                         <materialDesign:PackIcon.Foreground>
                                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -216,7 +226,7 @@
                                         </materialDesign:PackIcon.Foreground>
                                     </materialDesign:PackIcon>
                                 </Button>
-                                <Button   Style="{StaticResource MaterialDesignIconButton}" Width="22" Height="22" BorderBrush="{x:Null}" Foreground="DarkGray" >
+                                <Button  Command="{Binding DelLogCommand}" Style="{StaticResource MaterialDesignIconButton}" Width="22" Height="22" BorderBrush="{x:Null}" Foreground="DarkGray" >
                                     <materialDesign:PackIcon Height="22"  Width="22" Kind="RemoveBold" >
                                         <materialDesign:PackIcon.Foreground>
                                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -226,7 +236,7 @@
                                         </materialDesign:PackIcon.Foreground>
                                     </materialDesign:PackIcon>
                                 </Button>
-                                <Button   Style="{StaticResource MaterialDesignIconButton}" Width="22" Height="22" BorderBrush="{x:Null}" Foreground="DarkGray"  >
+                                <Button  Command="{Binding EditLogCommand}"  Style="{StaticResource MaterialDesignIconButton}" Width="22" Height="22" BorderBrush="{x:Null}" Foreground="DarkGray"  >
                                     <materialDesign:PackIcon Height="22"  Width="22" Kind="Edit" >
                                         <materialDesign:PackIcon.Foreground>
                                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -257,7 +267,7 @@
             </Grid.Background>
             <WrapPanel Orientation="Vertical" VerticalAlignment="Bottom">
 
-                <ListView  Name="Tourlistview" Foreground="Orange"  Height="450" Style="{StaticResource MaterialDesignListView}" Margin="10,5,0,5" Background="#72FFFFFF" FontFamily="Comic Sans MS"  FontSize="10" MinWidth="151"  >
+                <ListView ItemsSource="{Binding Tours}" SelectedItem="{Binding Tour}" Name="Tourlistview" Foreground="Orange"  Height="450" Style="{StaticResource MaterialDesignListView}" Margin="10,5,0,5" Background="#72FFFFFF" FontFamily="Comic Sans MS"  FontSize="10" MinWidth="151" MouseRightButtonDown="Tourlistview_MouseRightButtonDown"   >
                     <ListView.View>
                         <GridView  >
                             <GridViewColumn  Header="Name" DisplayMemberBinding="{Binding TourName}"   Width="120" />
@@ -266,7 +276,7 @@
                 </ListView>
 
                 <WrapPanel Orientation="Horizontal" Margin="50 0 0 5" >
-                    <Button  Style="{StaticResource MaterialDesignIconButton}" Width="22" Height="22" BorderBrush="{x:Null}" Foreground="DarkGray"  >
+                    <Button Command="{Binding AddTourCommand}"  Style="{StaticResource MaterialDesignIconButton}" Width="22" Height="22" BorderBrush="{x:Null}" Foreground="DarkGray"  >
                         <materialDesign:PackIcon Height="22"  Width="22" Kind="AddBold" >
                             <materialDesign:PackIcon.Foreground>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -276,7 +286,7 @@
                             </materialDesign:PackIcon.Foreground>
                         </materialDesign:PackIcon>
                     </Button>
-                    <Button   Style="{StaticResource MaterialDesignIconButton}" Width="22" Height="22" BorderBrush="{x:Null}" Foreground="DarkGray" >
+                    <Button Command="{Binding DelTourCommand}"   Style="{StaticResource MaterialDesignIconButton}" Width="22" Height="22" BorderBrush="{x:Null}" Foreground="DarkGray" >
                         <materialDesign:PackIcon Height="22"  Width="22" Kind="RemoveBold" >
                             <materialDesign:PackIcon.Foreground>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -286,7 +296,7 @@
                             </materialDesign:PackIcon.Foreground>
                         </materialDesign:PackIcon>
                     </Button>
-                    <Button   Style="{StaticResource MaterialDesignIconButton}" Width="22" Height="22" BorderBrush="{x:Null}" Foreground="DarkGray"  >
+                    <Button Command="{Binding EditTourCommand}"   Style="{StaticResource MaterialDesignIconButton}" Width="22" Height="22" BorderBrush="{x:Null}" Foreground="DarkGray"  >
                         <materialDesign:PackIcon Height="22"  Width="22" Kind="Edit" >
                             <materialDesign:PackIcon.Foreground>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -310,11 +320,11 @@
                         <GradientStop Color="Yellow" Offset="0.5"/>
                     </LinearGradientBrush>
                 </Menu.Foreground>
-                <MenuItem Header="Save" Height="15" Command="{Binding ImportTourFile}">
+                <MenuItem  Header="Save" Height="15" Command="{Binding SaveTourAsFileCommand}">
                 </MenuItem>
-                <MenuItem Header="Load" Height="15">
+                <MenuItem Command="{Binding LoadTourAsFileCommand}" Header="Load" Height="15">
                 </MenuItem>
-                <MenuItem Header="Get Report" Height="15">
+                <MenuItem Command="{Binding ReportAsPdfCommand}" Header="Get Report" Height="15">
                 </MenuItem>
 
             </Menu>
@@ -322,8 +332,8 @@
             <StackPanel/>
 
         </DockPanel>
-        <WrapPanel Grid.Column="3" Grid.Row="1">
-            <materialDesign:PackIcon Height="22"  Width="18" Kind="Search" >
+        <WrapPanel  Grid.Column="3" Grid.Row="1">
+            <materialDesign:PackIcon  Height="22"  Width="18" Kind="Search" >
                 <materialDesign:PackIcon.Foreground>
                     <LinearGradientBrush EndPoint="0.6,1" StartPoint="0.5,0">
                         <GradientStop Color="Orange" Offset="2"/>
@@ -331,7 +341,7 @@
                     </LinearGradientBrush>
                 </materialDesign:PackIcon.Foreground>
             </materialDesign:PackIcon>
-            <TextBox Width="120" Height="22"
+            <TextBox  Width="120" Height="22"
                      FontFamily="Comic Sans MS"
                      
                   x:Name="SearchBarTextBox"

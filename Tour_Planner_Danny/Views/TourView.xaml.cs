@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Tour_Planner_Danny.ViewModels;
 
 namespace Tour_Planner_Danny.Views
 {
@@ -20,8 +21,11 @@ namespace Tour_Planner_Danny.Views
         public TourView()
         {
             InitializeComponent();
-            
-           
+
+             vm = new TourViewModel();
+             this.DataContext = vm;
+            SingletoneVM singletoneVM = SingletoneVM.getInstance();
+            singletoneVM.ViewModel = vm;
         }
 
         private void MouseDownPanel(object sender, MouseButtonEventArgs e)
@@ -48,7 +52,20 @@ namespace Tour_Planner_Danny.Views
 
         private void AddLog(object sender, RoutedEventArgs e)
         {
-            new TourLogEditView().ShowDialog();
+            new TourLogEditView(vm.SelectedLog).ShowDialog();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(vm.Tour.TourName);
+        }
+        TourViewModel vm;
+
+      
+
+        private void Tourlistview_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Tourlistview.SelectedItem = null;
         }
     }
 }

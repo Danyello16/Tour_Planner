@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Tour_Planner_Danny.Models;
+using Tour_Planner_Danny.ViewModels;
 
 namespace Tour_Planner_Danny.Views
 {
@@ -19,9 +21,12 @@ namespace Tour_Planner_Danny.Views
     /// </summary>
     public partial class TourLogEditView : Window
     {
-        public TourLogEditView()
+       
+        public TourLogEditView(Log log)
         {
             InitializeComponent();
+            this.DataContext = new TourLogEditViewModel( log);
+
         }
 
         private void CloseButton(object sender, RoutedEventArgs e)
