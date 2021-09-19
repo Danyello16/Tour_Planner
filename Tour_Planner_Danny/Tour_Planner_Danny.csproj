@@ -141,6 +141,7 @@
     <Compile Include="Models\Log.cs" />
     <Compile Include="Models\Tour.cs" />
     <Compile Include="SingletoneVM.cs" />
+    <Compile Include="UnitTestes.cs" />
     <Compile Include="ViewModels\TourLogEditViewModel.cs" />
     <Compile Include="ViewModels\TourViewModel.cs" />
     <Compile Include="Views\TourLogEditView.xaml.cs">
