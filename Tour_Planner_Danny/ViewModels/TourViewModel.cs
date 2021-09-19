@@ -1,5 +1,6 @@
 ﻿using iTextSharp.text;
 using iTextSharp.text.pdf;
+using log4net;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,8 @@ namespace Tour_Planner_Danny.ViewModels
 {
     public class TourViewModel : INotifyPropertyChanged
     {
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         public ICommand AddTourCommand { get; set; }
         public ICommand SaveTourAsFileCommand { get; set; }
         public ICommand LoadTourAsFileCommand { get; set; }
@@ -33,11 +36,13 @@ namespace Tour_Planner_Danny.ViewModels
             Tour = new Tour();
             SelectedLog = new Log();
             Tours = new ObservableCollection<Tour>();
+            log.Info("data got from database...");
             foreach(Tour t in DataAcessLayer.DatabaseApi.GetTours())
             {
                 Tours.Add(t);
             }
-
+            log.Info("tour created..");
+            log.Error("example Error Log...");
             AddTourCommand = new AddTourIcommand(this);
             SaveTourAsFileCommand = new SaveTourIcommand(this);
             LoadTourAsFileCommand = new LoadTourIcommand(this);

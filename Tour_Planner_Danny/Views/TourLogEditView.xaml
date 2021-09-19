@@ -5,11 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tour_Planner_Danny.Views"
         mc:Ignorable="d"
+         xmlns:vm="clr-namespace:Tour_Planner_Danny.ViewModels"
         
       AllowsTransparency="True"
         Title="Tour Planner"  ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Margin="0 0 0 0" Height="350" Width="600" Icon="/UIImages/flight.png"
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" Background="{x:Null}">
-    <Grid>
+
+    <Window.Resources>
+        <vm:TourViewModel x:Key="TourLogEditViewModel"/>
+    </Window.Resources>
+
+
+
+    <Grid DataContext="{Binding Source={StaticResource TourLogEditViewModel}}">
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
             <RowDefinition Height="30"/>

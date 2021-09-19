@@ -16,9 +16,6 @@ using Tour_Planner_Danny.ViewModels;
 
 namespace Tour_Planner_Danny.Views
 {
-    /// <summary>
-    /// TourLogEditView.xaml etkileşim mantığı
-    /// </summary>
     public partial class TourLogEditView : Window
     {
        
