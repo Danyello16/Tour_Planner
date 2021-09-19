@@ -124,7 +124,9 @@ namespace Tour_Planner_Danny.ViewModels
         }
         public void DelTour()
         {
+            DataAcessLayer.DatabaseApi.DeleteTour(tour);
             Tours.Remove(tour);
+         
         }
         public void EditTour()
         {
@@ -132,7 +134,8 @@ namespace Tour_Planner_Danny.ViewModels
         }
         public void AddLog()
         {
-            tour.Logs.Add(SelectedLog);
+            DataAcessLayer.DatabaseApi.InsertATour(Tour);
+            tour.Logs.Add(SelectedLog);       
         }
         public void DelLog()
         {

@@ -128,7 +128,7 @@
                                         </LinearGradientBrush>
                                     </materialDesign:PackIcon.Foreground>
                                 </materialDesign:PackIcon>
-                                <TextBox Text="{Binding Tour.Route, Mode=TwoWay}" Width="120" Height="22" FontFamily="Comic Sans MS"  materialDesign:HintAssist.Hint="Route...">
+                                <TextBox Name="tbRoute" Text="{Binding Tour.Route, Mode=TwoWay}" Width="120" Height="22" FontFamily="Comic Sans MS"  materialDesign:HintAssist.Hint="Route...">
                                     <TextBox.Foreground>
                                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                             <GradientStop Color="#0188A3" Offset="0"/>
@@ -139,9 +139,17 @@
                                         <ImageBrush/>
                                     </TextBox.Background>
                                 </TextBox>
+                                <Button Foreground="Yellow"  Click="MapButton" Name="MapBut" Content="Nav">
+                                    <Button.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#0188A3" Offset="0"/>
+                                            <GradientStop Color="#5260ff" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Button.Background>
+                                </Button>
 
                             </WrapPanel>
-                            <Image Margin="0 10 1 1" Source="/UIImages/backgorundtour.png"  Width="200" Height="180" OpacityMask="Black"/>
+                            <Image Name="mapImage" Margin="0 10 1 1" Source="/UIImages/backgorundtour.png"  Width="200" Height="180" OpacityMask="Black"/>
                         </WrapPanel>
                     </WrapPanel>
 

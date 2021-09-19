@@ -33,6 +33,17 @@ namespace Tour_Planner_Danny.DataAcessLayer
             }
             return tours;
         }
+        public static void DeleteTour(Tour tour)
+        {
+            makeConnection();
+            Npgsql.Query("CALL public.delete_tour(" + tour.TourID + ")");
+        }
+
+        public static void InsertATour(Tour tour)
+        {
+            makeConnection();
+            Npgsql.Query("CALL public.insert_tour(" + tour.TourID + ",'" + tour.TourName + "','" + tour.TourDescription + "','" + tour.Route + "','" + tour.Distance + "')");
+        }
 
         public static List<Log> GetlogsofTour(int TourID)
         {
