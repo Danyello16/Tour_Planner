@@ -10,7 +10,7 @@ namespace Tour_Planner_Danny.Models
 {
     public class Tour:INotifyPropertyChanged 
     {
-
+       
         private int tourID;
         public int TourID
         {

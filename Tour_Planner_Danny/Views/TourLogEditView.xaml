@@ -9,7 +9,7 @@
         
       AllowsTransparency="True"
         Title="Tour Planner"  ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Margin="0 0 0 0" Height="350" Width="600" Icon="/UIImages/flight.png"
-         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" Background="{x:Null}">
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" Background="{x:Null}" Closing="Window_Closing">
 
     <Window.Resources>
         <vm:TourViewModel x:Key="TourLogEditViewModel"/>
@@ -110,7 +110,7 @@
                         </LinearGradientBrush>
                     </materialDesign:PackIcon.Foreground>
                 </materialDesign:PackIcon>
-                <TextBox Text="{Binding SelectedLog.Rating,Mode=TwoWay}" Width="120" Height="22" FontFamily="Comic Sans MS"  materialDesign:HintAssist.Hint="Rating...">
+                <TextBox Name="RateingTB" Text="{Binding SelectedLog.Rating,Mode=TwoWay}" Width="120" Height="22" FontFamily="Comic Sans MS"  materialDesign:HintAssist.Hint="Rating...">
                     <TextBox.Foreground>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="#0188A3" Offset="0"/>
@@ -133,7 +133,7 @@
                         </LinearGradientBrush>
                     </materialDesign:PackIcon.Foreground>
                 </materialDesign:PackIcon>
-                <TextBox Text="{Binding SelectedLog.TotalTime,Mode=TwoWay}" Width="120" Height="22" FontFamily="Comic Sans MS"  materialDesign:HintAssist.Hint="TotalTime...">
+                <TextBox Name="TotalTimeTB" Text="{Binding SelectedLog.TotalTime,Mode=TwoWay}" Width="120" Height="22" FontFamily="Comic Sans MS"  materialDesign:HintAssist.Hint="TotalTime...">
                     <TextBox.Foreground>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="#0188A3" Offset="0"/>
@@ -155,7 +155,7 @@
                         </LinearGradientBrush>
                     </materialDesign:PackIcon.Foreground>
                 </materialDesign:PackIcon>
-                <TextBox Text="{Binding SelectedLog.Date,Mode=TwoWay}" Width="120" Height="22" FontFamily="Comic Sans MS"  materialDesign:HintAssist.Hint="Date...">
+                <TextBox Name="DateTB" Text="{Binding SelectedLog.Date,Mode=TwoWay}" Width="120" Height="22" FontFamily="Comic Sans MS"  materialDesign:HintAssist.Hint="Date...">
                     <TextBox.Foreground>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="#0188A3" Offset="0"/>
@@ -177,7 +177,7 @@
                         </LinearGradientBrush>
                     </materialDesign:PackIcon.Foreground>
                 </materialDesign:PackIcon>
-                <TextBox Text="{Binding SelectedLog.Distance,Mode=TwoWay}" Width="120" Height="22" FontFamily="Comic Sans MS"  materialDesign:HintAssist.Hint="Distance...">
+                <TextBox Name="DistanceTB" Text="{Binding SelectedLog.Distance,Mode=TwoWay}" Width="120" Height="22" FontFamily="Comic Sans MS"  materialDesign:HintAssist.Hint="Distance...">
                     <TextBox.Foreground>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="#0188A3" Offset="0"/>
@@ -199,7 +199,7 @@
                         </LinearGradientBrush>
                     </materialDesign:PackIcon.Foreground>
                 </materialDesign:PackIcon>
-                <TextBox Text="{Binding SelectedLog.Temperature,Mode=TwoWay}" Width="120" Height="22" FontFamily="Comic Sans MS"  materialDesign:HintAssist.Hint="Temperature...">
+                <TextBox Name="TempTB" Text="{Binding SelectedLog.Temperature,Mode=TwoWay}" Width="120" Height="22" FontFamily="Comic Sans MS"  materialDesign:HintAssist.Hint="Temperature...">
                     <TextBox.Foreground>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="#0188A3" Offset="0"/>
@@ -212,7 +212,7 @@
                 </TextBox>
 
             </WrapPanel>
-            <WrapPanel Orientation="Horizontal" Margin="10 10 10 10">
+            <WrapPanel  Orientation="Horizontal" Margin="10 10 10 10">
                 <materialDesign:PackIcon Height="22"  Width="18" Kind="Rabbit" >
                     <materialDesign:PackIcon.Foreground>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -221,7 +221,7 @@
                         </LinearGradientBrush>
                     </materialDesign:PackIcon.Foreground>
                 </materialDesign:PackIcon>
-                <TextBox Text="{Binding SelectedLog.Cadence,Mode=TwoWay}" Width="120" Height="22" FontFamily="Comic Sans MS"  materialDesign:HintAssist.Hint="Cadence...">
+                <TextBox Name="CadanceTB" Text="{Binding SelectedLog.Cadence,Mode=TwoWay}" Width="120" Height="22" FontFamily="Comic Sans MS"  materialDesign:HintAssist.Hint="Cadence...">
                     <TextBox.Foreground>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="#0188A3" Offset="0"/>
@@ -243,7 +243,7 @@
                         </LinearGradientBrush>
                     </materialDesign:PackIcon.Foreground>
                 </materialDesign:PackIcon>
-                <TextBox Text="{Binding SelectedLog.PositionLong,Mode=TwoWay}" Width="120" Height="22" FontFamily="Comic Sans MS"  materialDesign:HintAssist.Hint="Position Long...">
+                <TextBox Name="PosLonTB" Text="{Binding SelectedLog.PositionLong,Mode=TwoWay}" Width="120" Height="22" FontFamily="Comic Sans MS"  materialDesign:HintAssist.Hint="Position Long...">
                     <TextBox.Foreground>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="#0188A3" Offset="0"/>
@@ -265,7 +265,7 @@
                         </LinearGradientBrush>
                     </materialDesign:PackIcon.Foreground>
                 </materialDesign:PackIcon>
-                <TextBox Text="{Binding SelectedLog.PositionLat,Mode=TwoWay}" Width="120" Height="22" FontFamily="Comic Sans MS"  materialDesign:HintAssist.Hint="Position Lat...">
+                <TextBox Name="PosLatTB" Text="{Binding SelectedLog.PositionLat,Mode=TwoWay}" Width="120" Height="22" FontFamily="Comic Sans MS"  materialDesign:HintAssist.Hint="Position Lat...">
                     <TextBox.Foreground>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="#0188A3" Offset="0"/>
@@ -287,7 +287,7 @@
                         </LinearGradientBrush>
                     </materialDesign:PackIcon.Foreground>
                 </materialDesign:PackIcon>
-                <TextBox Text="{Binding SelectedLog.AirPower,Mode=TwoWay}" Width="120" Height="22" FontFamily="Comic Sans MS"  materialDesign:HintAssist.Hint="Air Power...">
+                <TextBox Name="AirPowTB" Text="{Binding SelectedLog.AirPower,Mode=TwoWay}" Width="120" Height="22" FontFamily="Comic Sans MS"  materialDesign:HintAssist.Hint="Air Power...">
                     <TextBox.Foreground>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="#0188A3" Offset="0"/>

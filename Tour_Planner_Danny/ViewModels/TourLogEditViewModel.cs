@@ -10,10 +10,10 @@ namespace Tour_Planner_Danny.ViewModels
 {
     public class TourLogEditViewModel : INotifyPropertyChanged
     {
-        public Log SelectedLog { get; set; }
+       // public Log SelectedLog { get; set; }
         private Log _SelectedLog;
 
-        public Log sSelectedLog
+        public Log SelectedLog
         {
             get { return _SelectedLog; }
             set { _SelectedLog = value; NotifyPropertyChanged("SelectedLog");
@@ -39,5 +39,6 @@ namespace Tour_Planner_Danny.ViewModels
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
+        
     }
 }

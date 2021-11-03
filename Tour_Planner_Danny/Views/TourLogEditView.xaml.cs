@@ -19,15 +19,17 @@ namespace Tour_Planner_Danny.Views
     public partial class TourLogEditView : Window
     {
        
-        public TourLogEditView(Log log)
+        public TourLogEditView(Log log,bool ISNew)
         {
             InitializeComponent();
-            this.DataContext = new TourLogEditViewModel( log);
-
+            this.log = log;
+            IsNew = ISNew;
+            this.DataContext = new TourLogEditViewModel(log);         
+            Toolbar();
         }
 
         private void CloseButton(object sender, RoutedEventArgs e)
-        {
+        {         
             this.Close();
         }
 
@@ -42,10 +44,48 @@ namespace Tour_Planner_Danny.Views
         {
             this.WindowState = WindowState.Minimized;
         }
-
+        void Toolbar()
+        {
+            RateingTB.Text = log.Rating.ToString();
+            AirPowTB.Text = log.AirPower.ToString();
+            CadanceTB.Text = log.Cadence;
+            DateTB.Text = log.Date;
+            DistanceTB.Text = log.Distance;
+            PosLatTB.Text = log.PositionLat;
+            PosLonTB.Text = log.PositionLong;
+            TempTB.Text = log.Temperature;
+            TotalTimeTB.Text = log.TotalTime;
+        }
+        void MoveToolbar()
+        {
+            log.Rating=Convert.ToInt32(RateingTB.Text);
+            log.AirPower=Convert.ToInt32(AirPowTB.Text);
+            log.Cadence = CadanceTB.Text ;
+            log.Date=DateTB.Text ;
+            log.Distance = DistanceTB.Text ;
+            log.PositionLat = PosLatTB.Text ;
+            log.PositionLong = PosLonTB.Text ;
+            log.Temperature = TempTB.Text ;
+            log.TotalTime = TotalTimeTB.Text;
+        }
         private void Bar_MouseDown(object sender, MouseButtonEventArgs e)
         {
             DragMove();
         }
+        Log log;
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            MoveToolbar();
+            if (IsNew)
+            {
+                DataAcessLayer.DatabaseApi.InsertALog(log);
+            }
+            else
+            {
+                DataAcessLayer.DatabaseApi.UpdateALog(log);
+            }
+        }
+        bool IsNew;
     }
 }

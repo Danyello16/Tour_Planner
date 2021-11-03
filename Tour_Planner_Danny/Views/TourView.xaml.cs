@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using Tour_Planner_Danny.Models;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -53,10 +54,7 @@ namespace Tour_Planner_Danny.Views
             this.WindowState = WindowState.Minimized;
         }
 
-        private void AddLog(object sender, RoutedEventArgs e)
-        {
-            new TourLogEditView(vm.SelectedLog).ShowDialog();
-        }
+      
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -77,7 +75,7 @@ namespace Tour_Planner_Danny.Views
         {
             Tourlistview.SelectedItem = null;
         }
-
+        
         private void MapButton(object sender, RoutedEventArgs e)
         {
            
@@ -103,7 +101,7 @@ namespace Tour_Planner_Danny.Views
                             apiLink = "https://www.mapquestapi.com/staticmap/v5/map?start=" + start + "&end=" + stop + "&size=@2x&key=ENC6vtgWXGlFY0zvJoevS5Ek2XN5Kmkc&type=hyb";
                         }
 
-
+                   
                     mapImage.Source = LoadImage(new WebClient().DownloadData(apiLink));
                     }
                     catch
@@ -113,6 +111,54 @@ namespace Tour_Planner_Danny.Views
 
                 }
            
+        }
+        private void AddLog(object sender, RoutedEventArgs e)
+        {
+            var log = new Models.Log();
+            if (Tourlistview.SelectedIndex != -1)
+                log.TourID = DataAcessLayer.DatabaseApi.GetTours()[Tourlistview.SelectedIndex].TourID;
+            new TourLogEditView(log, true).ShowDialog();
+            lvLog.ItemsSource = DataAcessLayer.DatabaseApi.GetlogsofTour(DataAcessLayer.DatabaseApi.GetTours()[Tourlistview.SelectedIndex].TourID);
+        }
+        private void UpLog(object sender, RoutedEventArgs e)
+        {
+            if (lvLog.SelectedIndex > -1 && Tourlistview.SelectedIndex != -1){ 
+           
+            new TourLogEditView(DataAcessLayer.DatabaseApi.GetlogsofTour(DataAcessLayer.DatabaseApi.GetTours()[Tourlistview.SelectedIndex].TourID)[lvLog.SelectedIndex], false).ShowDialog();           
+                lvLog.ItemsSource = DataAcessLayer.DatabaseApi.GetlogsofTour(DataAcessLayer.DatabaseApi.GetTours()[Tourlistview.SelectedIndex].TourID);
+            }
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+          
+        }
+
+        private void Tourlistview_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try {
+                if (Tourlistview.SelectedIndex != -1)
+                    lvLog.ItemsSource = DataAcessLayer.DatabaseApi.GetlogsofTour(DataAcessLayer.DatabaseApi.GetTours()[Tourlistview.SelectedIndex].TourID);
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void SearchBarTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            List<Tour> AllTours =  DataAcessLayer.DatabaseApi.GetTours();
+          //  Tourlistview.Items.Clear();
+            if (SearchBarTextBox.Text == string.Empty)
+            {
+                Tourlistview.ItemsSource = AllTours;
+            }
+            else
+            {
+                Tourlistview.ItemsSource = AllTours.FindAll(x=>x.TourName.ToLower().StartsWith(SearchBarTextBox.Text.ToLower()));
+
+            }
         }
     }
 }
